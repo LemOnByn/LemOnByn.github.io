@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lemonbyn.github.io">
-  <title>八丈刈安</title>
+  <title>回文数 | 八丈刈安</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="今天是 2021&#x2F;12&#x2F;2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法 回文数定义设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n&#x3D;2002，则称n为一回文数，同理，65425852456也是回文数。 解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串 123456789">
+  <meta name="description" content="今天是 2021&#x2F;12&#x2F;2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法 回文数定义设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n&#x3D;2002，则称n为一回文数，同理，65425852456也是回文数。 解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串 回文数核心算法12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八丈刈安">
+<meta property="og:title" content="回文数">
 <meta property="og:url" content="https://lemonbyn.github.io/2021/12/02/%E5%9B%9E%E6%96%87%E6%95%B0/index.html">
 <meta property="og:site_name" content="八丈刈安">
-<meta property="og:description" content="今天是 2021&#x2F;12&#x2F;2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法 回文数定义设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n&#x3D;2002，则称n为一回文数，同理，65425852456也是回文数。 解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串 123456789">
+<meta property="og:description" content="今天是 2021&#x2F;12&#x2F;2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法 回文数定义设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n&#x3D;2002，则称n为一回文数，同理，65425852456也是回文数。 解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串 回文数核心算法12">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-12-02T09:38:10.717Z">
-<meta property="article:modified_time" content="2021-12-02T09:33:51.260Z">
+<meta property="article:published_time" content="2021-12-02T09:50:11.000Z">
+<meta property="article:modified_time" content="2021-12-02T09:54:57.584Z">
 <meta property="article:author" content="八丈刈安">
-<meta property="article:tag" content="八丈刈安,博客,计算机">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="八丈刈安" type="application/atom+xml">
@@ -229,12 +230,60 @@
             <article id="post-回文数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      回文数
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2021/12/02/%E5%9B%9E%E6%96%87%E6%95%B0/" class="archive-article-date">
+        <time datetime="2021-12-02T09:50:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-02</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">189字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
     <p><em>今天是 2021/12/2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法</em></p>
 <h2 id="回文数定义"><a href="#回文数定义" class="headerlink" title="回文数定义"></a>回文数定义</h2><p>设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n=2002，则称n为一回文数，同理，65425852456也是回文数。</p>
 <p>解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//c++</span><br><span class="line"></span><br><span class="line">//Core Algorithm</span><br><span class="line">bool judge(string str) &#123;</span><br><span class="line">        int len = str.length();</span><br><span class="line">        for(int i = 0 ; i &lt; len/2 ;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                if(str[i]!=str[len-1-i])</span><br><span class="line">                        return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="回文数核心算法"><a href="#回文数核心算法" class="headerlink" title="回文数核心算法"></a>回文数核心算法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//c++</span><br><span class="line"></span><br><span class="line">//Core Algorithm</span><br><span class="line">bool judge(string str) &#123;</span><br><span class="line">        int len = str.length();</span><br><span class="line">        for(int i = 0 ; i &lt; len/2 ;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                if(str[i]!=str[len-1-i])</span><br><span class="line">                        return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     
 
     
@@ -277,6 +326,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -507,6 +571,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
