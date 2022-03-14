@@ -237,6 +237,116 @@
             
 
   
+    <article id="post-牛顿法解方程的根" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" target="_blank">牛顿迭代法实现Sqrt函数</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" class="archive-article-date">
+        <time datetime="2022-03-14T03:54:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>牛顿迭代法（Newton’s method）又称为牛顿-拉夫逊方法（Newton-Raphson method），它是牛顿在17世纪提出的一种在实数域和复数域上近似求解方程的方法。多数方程不存在求根公式，因此求精确根非常困难，甚至不可能，从而寻找方程的近似根就显得特别重要。方法使用函数f(x)的泰勒级数的前面几项来寻找方程f(x) = 0的根。牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程f(x) = 0的单根附近具有平方收敛，而且该法还可以用来求方程的重根、复根。另外该方法广泛用于计算机编程中（如：sqrt函数的实现））。</p>
+<h2 id="数学内涵"><a href="#数学内涵" class="headerlink" title="数学内涵"></a>数学内涵</h2><p><a href="https://www.zhihu.com/question/20690553"> 如何通俗易懂地讲解牛顿迭代法求开方（数值分析）？ - 知乎 (zhihu.com)</a></p>
+<h2 id="一句话解释"><a href="#一句话解释" class="headerlink" title="一句话解释"></a>一句话解释</h2><p>切线是曲线的线性逼近，所以将某个二阶可导的函数f(x)的求解转化为将该函数的切线方程的解并重复迭代求解，在无限次的迭代后会稳定在一个值，数学上称之为迭代收敛，这个值就便可看作原f(x)=0的根。（如下图A-D的过程）</p>
+<p><img src="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/tu.png" alt="图例（源于知乎）"></p>
+<h2 id="代码应用-Golang实现sqrt"><a href="#代码应用-Golang实现sqrt" class="headerlink" title="代码应用(Golang实现sqrt)"></a>代码应用(Golang实现sqrt)</h2><p>对于求根的值，我们下面的 z² − x 是 z² 到它所要到达的值（即 x）的距离， 除以的 2z 为 z² 的导数，通过迭代即可实现sqrt（）， 随着迭代次数的增加可以提升sqrt函数的精度</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	z   <span class="keyword">float64</span> = <span class="number">1.0</span> <span class="comment">//起始点</span></span><br><span class="line">	nbr <span class="keyword">int</span>     = <span class="number">4</span>   <span class="comment">//迭代次数</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Sqrt</span><span class="params">(x <span class="keyword">float64</span>, z <span class="keyword">float64</span>, nbr <span class="keyword">int</span>)</span> <span class="title">float64</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= nbr; i++ &#123;</span><br><span class="line">		z -= (z*z - x) / (<span class="number">2</span> * z)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> z</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-记于年后" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -800,6 +910,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tests</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
               </li>
              
               <li class="article-tag-list-item">

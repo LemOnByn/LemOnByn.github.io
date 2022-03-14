@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lemonbyn.github.io">
-  <title>1 | 八丈刈安</title>
+  <title>牛顿迭代法实现Sqrt函数 | 八丈刈安</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="测试图片">
+  <meta name="description" content="定义牛顿迭代法（Newton’s method）又称为牛顿-拉夫逊方法（Newton-Raphson method），它是牛顿在17世纪提出的一种在实数域和复数域上近似求解方程的方法。多数方程不存在求根公式，因此求精确根非常困难，甚至不可能，从而寻找方程的近似根就显得特别重要。方法使用函数f(x)的泰勒级数的前面几项来寻找方程f(x) &#x3D; 0的根。牛顿迭代法是求方程根的重要方法之一，其最大优点是在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1">
-<meta property="og:url" content="https://lemonbyn.github.io/2021/11/27/1/index.html">
+<meta property="og:title" content="牛顿迭代法实现Sqrt函数">
+<meta property="og:url" content="https://lemonbyn.github.io/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/index.html">
 <meta property="og:site_name" content="八丈刈安">
-<meta property="og:description" content="测试图片">
+<meta property="og:description" content="定义牛顿迭代法（Newton’s method）又称为牛顿-拉夫逊方法（Newton-Raphson method），它是牛顿在17世纪提出的一种在实数域和复数域上近似求解方程的方法。多数方程不存在求根公式，因此求精确根非常困难，甚至不可能，从而寻找方程的近似根就显得特别重要。方法使用函数f(x)的泰勒级数的前面几项来寻找方程f(x) &#x3D; 0的根。牛顿迭代法是求方程根的重要方法之一，其最大优点是在">
 <meta property="og:locale">
-<meta property="og:image" content="https://lemonbyn.github.io/2021/11/27/1/tests.jpg">
-<meta property="article:published_time" content="2021-11-27T15:14:29.000Z">
-<meta property="article:modified_time" content="2021-11-27T15:38:25.141Z">
+<meta property="og:image" content="https://lemonbyn.github.io/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/tu.png">
+<meta property="article:published_time" content="2022-03-14T03:54:29.000Z">
+<meta property="article:modified_time" content="2022-03-14T04:07:20.994Z">
 <meta property="article:author" content="八丈刈安">
-<meta property="article:tag" content="tests">
+<meta property="article:tag" content="Golang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lemonbyn.github.io/2021/11/27/1/tests.jpg">
+<meta name="twitter:image" content="https://lemonbyn.github.io/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/tu.png">
   
     <link rel="alternative" href="/atom.xml" title="八丈刈安" type="application/atom+xml">
   
@@ -234,14 +234,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-牛顿法解方程的根" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      1
+      牛顿迭代法实现Sqrt函数
     </h1>
   
 
@@ -253,8 +253,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2021/11/27/1/" class="archive-article-date">
-        <time datetime="2021-11-27T15:14:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
+<a href="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" class="archive-article-date">
+        <time datetime="2022-03-14T03:54:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-14</time>
 </a>
 
   
@@ -267,7 +267,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4字</span>
+      <span class="post-count">448字</span>
     </span>
   </span>
 
@@ -287,7 +287,31 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>测试图片<br><img src="/2021/11/27/1/tests.jpg" alt="tests"></p>
+    <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>牛顿迭代法（Newton’s method）又称为牛顿-拉夫逊方法（Newton-Raphson method），它是牛顿在17世纪提出的一种在实数域和复数域上近似求解方程的方法。多数方程不存在求根公式，因此求精确根非常困难，甚至不可能，从而寻找方程的近似根就显得特别重要。方法使用函数f(x)的泰勒级数的前面几项来寻找方程f(x) = 0的根。牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程f(x) = 0的单根附近具有平方收敛，而且该法还可以用来求方程的重根、复根。另外该方法广泛用于计算机编程中（如：sqrt函数的实现））。</p>
+<h2 id="数学内涵"><a href="#数学内涵" class="headerlink" title="数学内涵"></a>数学内涵</h2><p><a href="https://www.zhihu.com/question/20690553"> 如何通俗易懂地讲解牛顿迭代法求开方（数值分析）？ - 知乎 (zhihu.com)</a></p>
+<h2 id="一句话解释"><a href="#一句话解释" class="headerlink" title="一句话解释"></a>一句话解释</h2><p>切线是曲线的线性逼近，所以将某个二阶可导的函数f(x)的求解转化为将该函数的切线方程的解并重复迭代求解，在无限次的迭代后会稳定在一个值，数学上称之为迭代收敛，这个值就便可看作原f(x)=0的根。（如下图A-D的过程）</p>
+<p><img src="/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/tu.png" alt="图例（源于知乎）"></p>
+<h2 id="代码应用-Golang实现sqrt"><a href="#代码应用-Golang实现sqrt" class="headerlink" title="代码应用(Golang实现sqrt)"></a>代码应用(Golang实现sqrt)</h2><p>对于求根的值，我们下面的 z² − x 是 z² 到它所要到达的值（即 x）的距离， 除以的 2z 为 z² 的导数，通过迭代即可实现sqrt（）， 随着迭代次数的增加可以提升sqrt函数的精度</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	z   <span class="keyword">float64</span> = <span class="number">1.0</span> <span class="comment">//起始点</span></span><br><span class="line">	nbr <span class="keyword">int</span>     = <span class="number">4</span>   <span class="comment">//迭代次数</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Sqrt</span><span class="params">(x <span class="keyword">float64</span>, z <span class="keyword">float64</span>, nbr <span class="keyword">int</span>)</span> <span class="title">float64</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= nbr; i++ &#123;</span><br><span class="line">		z -= (z*z - x) / (<span class="number">2</span> * z)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> z</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
@@ -326,6 +350,26 @@
     
 
     
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          八丈刈安
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://lemonbyn.github.io/2022/03/14/牛顿法解方程的根/" title="牛顿迭代法实现Sqrt函数" target="_blank">https://lemonbyn.github.io/2022/03/14/牛顿法解方程的根/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/LemOnByn/LemOnByn.github.io/blob/main/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
   </div>
   <div class="article-info article-info-index">
@@ -336,7 +380,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tests</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
         		</li>
       		
 		</ul>
@@ -392,7 +436,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lemonbyn.github.io/2021/11/27/1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lemonbyn.github.io/2022/03/14/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -407,18 +451,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/12/02/%E5%9B%9E%E6%96%87%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          回文数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/11/27/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">随便写写</div>
+    <a href="/2022/02/28/%E8%AE%B0%E4%BA%8E%E5%B9%B4%E5%90%8E/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记于年后</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -459,9 +494,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "1" -->
+    <!-- id: "牛顿迭代法实现Sqrt函数" -->
     var gitment = new Gitment({
-      id: "20211127231429",
+      id: "20220314115429",
       owner: 'LemOnByn',
       repo: 'LemOnByn.github.io',
       oauth: {
