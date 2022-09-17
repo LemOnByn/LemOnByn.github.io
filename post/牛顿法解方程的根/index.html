@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="八丈刈安" />
-  <meta property="og:url" content="http://example.org/post/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" />
-  <link rel="canonical" href="http://example.org/post/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" /><link rel="alternate" type="application/atom+xml" href="http://example.org/index.xml" title="Kariyasu&#39;s Site">
+  <meta property="og:url" content="https://lambent-tanuki-9903f7.netlify.app/post/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" />
+  <link rel="canonical" href="https://lambent-tanuki-9903f7.netlify.app/post/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/" /><link rel="alternate" type="application/atom+xml" href="https://lambent-tanuki-9903f7.netlify.app/index.xml" title="Kariyasu&#39;s Blog">
 
   <script type="application/ld+json">
   {
@@ -16,7 +16,7 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "http:\/\/example.org\/"
+           "@id": "https:\/\/lambent-tanuki-9903f7.netlify.app\/"
       },
       "articleSection" : "post",
       "name" : "牛顿迭代法实现Sqrt函数",
@@ -31,8 +31,8 @@
       "copyrightYear" : "141414",
       "datePublished": "2022-03-14 11:54:29 \u002b0800 CST",
       "dateModified" : "2022-03-14 11:54:29 \u002b0800 CST",
-      "url" : "http:\/\/example.org\/post\/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9\/",
-      "keywords" : [  ]
+      "url" : "https:\/\/lambent-tanuki-9903f7.netlify.app\/post\/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9\/",
+      "keywords" : [ "Go","Algorithm", ]
   }
 </script>
 <title>牛顿迭代法实现Sqrt函数</title>
@@ -61,7 +61,7 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
   <link rel="stylesheet" href="/css/foo.css"><link rel="stylesheet" href="/css/bar.css">
 
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
-    title="Kariyasu&#39;s Site">
+    title="Kariyasu&#39;s Blog">
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
@@ -82,19 +82,19 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
 <header>
   <div class="header-title">
     <a href="/"
-      >Kariyasu&#39;s Site</a
+      >Kariyasu&#39;s Blog</a
     >
   </div>
-  <div class="header-subtitle">欢迎访问八丈的博客</div>
+  <div class="header-subtitle">我们在标签里找方向</div>
 </header>
 <div class="row end-md center-xs header-items">
   
   <div class="header-item">
-    <a href="https://github.com/joway" target="_blank">Github</a>
+    <a href="https://github.com/LemOnByn" target="_blank">Github</a>
   </div>
   
   <div class="header-item">
-    <a href="https://github.com/joway" target="_blank">Bilibili</a>
+    <a href="https://space.bilibili.com/8080957" target="_blank">Bilibili</a>
   </div>
   
   <div class="header-item">
@@ -102,7 +102,7 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
   </div>
   
   <div class="header-item">
-    <a href="" target="_blank">About Me</a>
+    <a href="/about_me/" target="_blank">About Me</a>
   </div>
   
 </div>
@@ -126,7 +126,7 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
             <div class="col-xs-6">
               
               <div class="post-author">
-                <a target="_blank" href="">@八丈刈安</a>
+                <a target="_blank" href="/about_me/">@八丈刈安</a>
               </div>
               
             </div>
@@ -142,7 +142,7 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
 <p><a href="https://www.zhihu.com/question/20690553"> 如何通俗易懂地讲解牛顿迭代法求开方（数值分析）？ - 知乎 (zhihu.com)</a></p>
 <h2 id="一句话解释">一句话解释</h2>
 <p>切线是曲线的线性逼近，所以将某个二阶可导的函数f(x)的求解转化为将该函数的切线方程的解并重复迭代求解，在无限次的迭代后会稳定在一个值，数学上称之为迭代收敛，这个值就便可看作原f(x)=0的根。（如下图A-D的过程）</p>
-<p><img src="%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/tu.png" alt="图例（源于知乎）"></p>
+<p><img src="https://raw.githubusercontent.com/LemOnByn/PG_image/master/img/202209171717553.png" alt="图例（源于知乎）"></p>
 <h2 id="代码应用golang实现sqrt">代码应用(Golang实现sqrt)</h2>
 <p>对于求根的值，我们下面的 z² − x 是 z² 到它所要到达的值（即 x）的距离， 除以的 2z 为 z² 的导数，通过迭代即可实现sqrt（）， 随着迭代次数的增加可以提升sqrt函数的精度</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="font-weight:bold">var</span> (
@@ -164,16 +164,37 @@ var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x floa
         <div class="row middle-xs">
           <div class="col-xs-12">
             
+            <div class="post-tags">
+              <a href="/tags/go/">
+                Go
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/algorithm/">
+                Algorithm
+              </a>
+            </div>
+            
           </div>
         </div>
         
           <div class="row">
             <div class="col-xs-12">
-              
+              <p>Copyright &#xA9; 2022 八丈刈安 All Rights Reserved</p>
             </div>
           </div>
 
           
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a></li>
+    
+  </ul>
+</div>
 
 
 

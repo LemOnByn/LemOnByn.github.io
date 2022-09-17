@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cpp on Kariyasu&#39;s Blog</title>
+    <link>https://lambent-tanuki-9903f7.netlify.app/tags/cpp/</link>
+    <description>Recent content in Cpp on Kariyasu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Dec 2021 17:50:11 +0000</lastBuildDate><atom:link href="https://lambent-tanuki-9903f7.netlify.app/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>回文数</title>
+      <link>https://lambent-tanuki-9903f7.netlify.app/post/%E5%9B%9E%E6%96%87%E6%95%B0/</link>
+      <pubDate>Thu, 02 Dec 2021 17:50:11 +0000</pubDate>
+      
+      <guid>https://lambent-tanuki-9903f7.netlify.app/post/%E5%9B%9E%E6%96%87%E6%95%B0/</guid>
+      <description>今天是 2021/12/2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法
+回文数定义 设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n=2002，则称n为一回文数，同理，65425852456也是回文数。
+解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串
+回文数核心算法 //Core Algorithm bool judge(string str) { int len = str.length(); for(int i = 0 ; i &amp;lt; len/2 ;i++) { if(str[i]!=str[len-1-i]) return false; } return true; }; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Kariyasu&#39;s Blog</title>
-    <link>https://lambent-tanuki-9903f7.netlify.app/tags/go/</link>
-    <description>Recent content in Go on Kariyasu&#39;s Blog</description>
+    <title>Algorithm on Kariyasu&#39;s Blog</title>
+    <link>https://lambent-tanuki-9903f7.netlify.app/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Kariyasu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Mar 2022 11:54:29 +0800</lastBuildDate><atom:link href="https://lambent-tanuki-9903f7.netlify.app/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 11:54:29 +0800</lastBuildDate><atom:link href="https://lambent-tanuki-9903f7.netlify.app/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>牛顿迭代法实现Sqrt函数</title>
       <link>https://lambent-tanuki-9903f7.netlify.app/post/%E7%89%9B%E9%A1%BF%E6%B3%95%E8%A7%A3%E6%96%B9%E7%A8%8B%E7%9A%84%E6%A0%B9/</link>
@@ -18,6 +18,18 @@
 一句话解释 切线是曲线的线性逼近，所以将某个二阶可导的函数f(x)的求解转化为将该函数的切线方程的解并重复迭代求解，在无限次的迭代后会稳定在一个值，数学上称之为迭代收敛，这个值就便可看作原f(x)=0的根。（如下图A-D的过程）
 代码应用(Golang实现sqrt) 对于求根的值，我们下面的 z² − x 是 z² 到它所要到达的值（即 x）的距离， 除以的 2z 为 z² 的导数，通过迭代即可实现sqrt（）， 随着迭代次数的增加可以提升sqrt函数的精度
 var ( z float64 = 1.0 //起始点 	nbr int = 4 //迭代次数 ) func Sqrt(x float64, z float64, nbr int) float64 { for i := 1; i &amp;lt;= nbr; i++ { z -= (z*z - x) / (2 * z) } return z } </description>
+    </item>
+    
+    <item>
+      <title>回文数</title>
+      <link>https://lambent-tanuki-9903f7.netlify.app/post/%E5%9B%9E%E6%96%87%E6%95%B0/</link>
+      <pubDate>Thu, 02 Dec 2021 17:50:11 +0000</pubDate>
+      
+      <guid>https://lambent-tanuki-9903f7.netlify.app/post/%E5%9B%9E%E6%96%87%E6%95%B0/</guid>
+      <description>今天是 2021/12/2 看朋友圈有人说 “今天是千年一遇的爱的对称日 ” 想到了今天也是回文数日，复习一下回文数算法
+回文数定义 设n是一任意自然数。若将n的各位数字反向排列所得自然数n1与n相等，则称n为一回文数。例如，若n=2002，则称n为一回文数，同理，65425852456也是回文数。
+解决思路：头尾匹配，将字符串的头部位置和尾部位置匹配校验，下文使用数组装置字符串
+回文数核心算法 //Core Algorithm bool judge(string str) { int len = str.length(); for(int i = 0 ; i &amp;lt; len/2 ;i++) { if(str[i]!=str[len-1-i]) return false; } return true; }; </description>
     </item>
     
   </channel>
