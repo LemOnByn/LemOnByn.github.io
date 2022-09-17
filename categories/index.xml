@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
+    <title>Categories on Kariyasu&#39;s Site</title>
     <link>http://example.org/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <description>Recent content in Categories on Kariyasu&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Sep 2022 00:43:52 +0800</lastBuildDate><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test2</title>
+      <link>http://example.org/categories/test2/</link>
+      <pubDate>Sat, 17 Sep 2022 00:43:52 +0800</pubDate>
+      
+      <guid>http://example.org/categories/test2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://example.org/categories/test/</link>
+      <pubDate>Mon, 14 Mar 2022 11:54:29 +0800</pubDate>
+      
+      <guid>http://example.org/categories/test/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
